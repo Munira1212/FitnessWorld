@@ -71,7 +71,6 @@ public abstract class Medlemmer implements Comparable<MedlemOprettelsesubclass> 
 
     }
 
-
     // informion der senere bliver i ------------------------------
     public void oprettelsesInformation(){
         generateOprettelsesår();

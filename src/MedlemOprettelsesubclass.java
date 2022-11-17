@@ -10,7 +10,7 @@ public class MedlemOprettelsesubclass extends Medlemmer{
         super();
 
     }
- ArrayList<MedlemOprettelsesubclass> lavedListe;
+ private ArrayList<MedlemOprettelsesubclass> lavedListe;
 
 
     public void OfficielListe(){
@@ -19,15 +19,26 @@ public class MedlemOprettelsesubclass extends Medlemmer{
 
     // Jeg har hentede fra superklassen medlemmer
     public void printFriends() {
-        lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
+        //lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
+
         System.out.println();
         for (MedlemOprettelsesubclass f :lavedListe)
         System.out.printf("%-12s%-30s%-30s%-30s%-10s%n",f.generateOprettelsesår(), f.getName(),f.getage(), f.getEmail(), f.getTelefonNummer(),
+
                 f.getInputName(), f.getInputAge(), f.getInpuEmail(), f.getInputTelefonNummer());
 
     }
     public int compareTo(MedlemOprettelsesubclass o) {
         return 0;
+    }
+
+    public void createNewMember(){
+        lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
+    }
+
+
+    public ArrayList<MedlemOprettelsesubclass> getLavedListe() {
+        return lavedListe;
     }
 
     @Override

@@ -21,7 +21,6 @@ public class Menu {
         }
 
 
-
     MedlemOprettelsesubclass mdo= new MedlemOprettelsesubclass();
 
         public void readChoice() {
@@ -34,8 +33,10 @@ public class Menu {
 
                     System.out.println(" Opret Medlem");
 
+                    mdo.OfficielListe();
                     mdo.oprettelsesInformation();
-
+                    mdo.createNewMember();
+                    System.out.println(mdo.getLavedListe());
 
                     break;
                 case 2:
@@ -49,7 +50,7 @@ public class Menu {
                 case 4 :
                     System.out.println("Oversigt over medlemmer -sorteret");
 
-                    mdo.OfficielListe();
+                    //mdo.OfficielListe();
                     mdo.printFriends();
                     break;
 

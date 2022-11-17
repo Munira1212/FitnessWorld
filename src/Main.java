@@ -2,9 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-
     //Henter fra Medlemoprettelse klasse
-
 
 
 void run() {
