@@ -8,32 +8,34 @@ public class MedlemOprettelsesubclass extends Medlemmer{
 
     public MedlemOprettelsesubclass(){
         super();
-
     }
  private ArrayList<MedlemOprettelsesubclass> lavedListe;
 
 
-    public void OfficielListe(){
-        lavedListe = ListeAfMedlemmerne.ListeOprettelse();
+    public void OfficielListe(ArrayList<MedlemOprettelsesubclass> lavedListe){
+        ListeAfMedlemmerne.listeOprettelse(lavedListe);
     }
 
-    // Jeg har hentede fra superklassen medlemmer
-    public void printFriends() {
-        //lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
+    // Jeg har hentede fra superklassen medlemmer------------------------------------------------------------------
 
-        System.out.println();
-        for (MedlemOprettelsesubclass f :lavedListe)
-        System.out.printf("%-12s%-30s%-30s%-30s%-10s%n",f.generateOprettelsesår(), f.getName(),f.getage(), f.getEmail(), f.getTelefonNummer(),
+    public void printFriends(ArrayList<MedlemOprettelsesubclass>lavedListee) {
+     //   lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
 
-                f.getInputName(), f.getInputAge(), f.getInpuEmail(), f.getInputTelefonNummer());
+        System.out.println(lavedListee);
+        //for (MedlemOprettelsesubclass f :lavedListee)
+       // System.out.printf("%-12s%-30s%-30s%-30s%-10s%n",f.generateOprettelsesår(), f.getName(),f.getage(), f.getEmail(), f.getTelefonNummer(),
+        //lavedListe.get(0).getInputName()
+             //   f.getInputName(), f.getInputAge(), f.getInpuEmail(), f.getInputTelefonNummer());
 
     }
+
     public int compareTo(MedlemOprettelsesubclass o) {
         return 0;
     }
 
     public void createNewMember(){
-        lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
+        //lavedListe.add(new MedlemOprettelsesubclass( getInputName(), getInputAge(), getInpuEmail(), getInputTelefonNummer()));
+
     }
 
 
@@ -41,8 +43,8 @@ public class MedlemOprettelsesubclass extends Medlemmer{
         return lavedListe;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+
+   /* public String toString() {
+        return super.toString() +  getInputName() + getInputAge() + getInpuEmail() + getInputTelefonNummer();
+    }*/
 }

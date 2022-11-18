@@ -8,6 +8,7 @@ public class Menu {
         private String menuItems;
         private int input;
         private boolean keepRunning;
+    private ArrayList<MedlemOprettelsesubclass> lavedListee = new ArrayList<>();
 
         public Menu(String menuHeader, String leadText, String menuItems) {
             this.menuHeader = menuHeader;
@@ -23,8 +24,12 @@ public class Menu {
 
     MedlemOprettelsesubclass mdo= new MedlemOprettelsesubclass();
 
+
         public void readChoice() {
 
+            if(lavedListee.size() == 0 ){
+                     ListeAfMedlemmerne.listeOprettelse(lavedListee)  ;
+            }
             Scanner sc = new Scanner(System.in);
                 input = sc.nextInt();
             switch (input) {
@@ -33,10 +38,10 @@ public class Menu {
 
                     System.out.println(" Opret Medlem");
 
-                    mdo.OfficielListe();
-                    mdo.oprettelsesInformation();
-                    mdo.createNewMember();
-                    System.out.println(mdo.getLavedListe());
+                    //mdo.OfficielListe();
+                    mdo.oprettelsesInformation(lavedListee);
+                   // mdo.createNewMember();
+                    //System.out.println(mdo.getLavedListe());
 
                     break;
                 case 2:
@@ -50,20 +55,19 @@ public class Menu {
                 case 4 :
                     System.out.println("Oversigt over medlemmer -sorteret");
 
-                    //mdo.OfficielListe();
-                    mdo.printFriends();
+                   mdo.printFriends(lavedListee);
                     break;
 
                 case 5:
                     System.out.println("Tilføj en ven");
-                    break;
 
+                    break;
                 case 9:
                     System.out.println("9: Exit Program");
                     keepRunning = false;
                     break;
             }
-            keepRunning= false;
+           // keepRunning= false;
             printMenu();
             readChoice();
 

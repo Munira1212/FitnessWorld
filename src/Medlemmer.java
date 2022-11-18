@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public abstract class Medlemmer implements Comparable<MedlemOprettelsesubclass> 
     private int inputTelefonNummer;
     private int inputAge;
     private boolean keepRunning;
+   // private ArrayList<MedlemOprettelsesubclass> lavedListee = new ArrayList<>();
     private String info;
 
 
@@ -72,24 +74,36 @@ public abstract class Medlemmer implements Comparable<MedlemOprettelsesubclass> 
     }
 
     // informion der senere bliver i ------------------------------
-    public void oprettelsesInformation(){
-        generateOprettelsesår();
+    public void oprettelsesInformation( ArrayList<MedlemOprettelsesubclass>lavedListee){
+       // generateOprettelsesår();
          Scanner scanner= new Scanner(System.in);
 
         System.out.println("Name?");
-        inputName =scanner.nextLine();
+       String inputName =scanner.nextLine();
 
         System.out.println(" Alder");
-        inputAge= sc.nextInt();
+        int inputAge= sc.nextInt();
 
         System.out.println("Email?");
-        inpuEmail = scanner.nextLine();
+       String inpuEmail = scanner.nextLine();
 
         System.out.println(" telefonnummer?");
-        inputTelefonNummer= sc.nextInt();
+        int inputTelefonNummer= sc.nextInt();
 
-        System.out.println("oprettelses dagen er: " + LocalDate.now());
+     MedlemOprettelsesubclass mdo = new MedlemOprettelsesubclass( inputName,inputAge,inpuEmail,inputTelefonNummer);
+
+    lavedListee.add(mdo);
+     System.out.println("oprettelses dagen er: " + LocalDate.now());
     }
 
+    @Override
+    public String toString() {
+        return "Medlemmer{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", telefonNummer=" + telefonNummer +
+                ", age=" + age +
+                '}'+ "\n" ;
 
+    }
 }
