@@ -45,19 +45,6 @@ public abstract class Medlemmer implements Comparable<MedlemOprettelsesubclass> 
     public String getInfo() {
         return info;
     }
-    // Attributer til min input, som bliver sat i MedlemOprettelse-------------------------------
-    public String getInputName() {
-        return inputName;
-    }
-    public int getInputAge() {
-        return inputAge;
-    }
-    public String getInpuEmail() {
-        return inpuEmail;
-    }
-    public int getInputTelefonNummer() {
-        return inputTelefonNummer;
-    }
 
     //En metode der random vælger datoer-----------------
     public LocalDate generateOprettelsesår() {
@@ -75,7 +62,7 @@ public abstract class Medlemmer implements Comparable<MedlemOprettelsesubclass> 
 
     // informion der senere bliver i ------------------------------
     public void oprettelsesInformation( ArrayList<MedlemOprettelsesubclass>lavedListee){
-       // generateOprettelsesår();
+      // generateOprettelsesår();
          Scanner scanner= new Scanner(System.in);
 
         System.out.println("Name?");
@@ -91,19 +78,18 @@ public abstract class Medlemmer implements Comparable<MedlemOprettelsesubclass> 
         int inputTelefonNummer= sc.nextInt();
 
      MedlemOprettelsesubclass mdo = new MedlemOprettelsesubclass( inputName,inputAge,inpuEmail,inputTelefonNummer);
-
-    lavedListee.add(mdo);
+     lavedListee.add(mdo);
      System.out.println("oprettelses dagen er: " + LocalDate.now());
     }
 
     @Override
     public String toString() {
         return "Medlemmer{" +
+                LocalDate.now() +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", telefonNummer=" + telefonNummer +
                 ", age=" + age +
                 '}'+ "\n" ;
-
     }
 }

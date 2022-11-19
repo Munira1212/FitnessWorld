@@ -34,40 +34,37 @@ public class Menu {
                 input = sc.nextInt();
             switch (input) {
 
-                case 1:
-
-                    System.out.println(" Opret Medlem");
-
-                    //mdo.OfficielListe();
-                    mdo.oprettelsesInformation(lavedListee);
+                case 1 ->    mdo.oprettelsesInformation(lavedListee);
+                //=      System.out.println(" Opret Medlem");
+                //mdo.oprettelsesInformation(lavedListee);
+                //mdo.OfficielListe();
                    // mdo.createNewMember();
                     //System.out.println(mdo.getLavedListe());
 
-                    break;
-                case 2:
+
+                case 2->
                     System.out.println("Diaktivere medlem");
 
-                    break;
-                case 3:
+
+                case 3->
                     System.out.println("Opgrader til Primuam medlem");
 
-                    break;
-                case 4 :
-                    System.out.println("Oversigt over medlemmer -sorteret");
+
+                case 4 ->
+                    //System.out.println("Oversigt over medlemmer -sorteret");
 
                    mdo.printFriends(lavedListee);
-                    break;
 
-                case 5:
+
+                case 5->
                     System.out.println("Tilføj en ven");
 
-                    break;
-                case 9:
+
+               /* case 9:
                     System.out.println("9: Exit Program");
                     keepRunning = false;
-                    break;
+                    break;   */
             }
-           // keepRunning= false;
             printMenu();
             readChoice();
 

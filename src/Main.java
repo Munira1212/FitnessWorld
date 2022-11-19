@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-
 public class Main {
 
     //Henter fra Medlemoprettelse klasse
-
-
 void run() {
 
 
-    Menu menu = new Menu("Hvad kan vi gøre for dig; ) ", "Vil DU : "," 1:Opret medlemskab 2: Deaktiver dit medlem skab, 3: Opgrader til Gold Medlem, 4 ");
+    Menu menu = new Menu("Welcome to fitness world! ", "What can we do for you? : "," 1: To become a member 2: Deactive your membership, 3: Upgrade your mebership, " +
+            "4: To View the other members ");
     menu.printMenu();
     menu.readChoice();
 
